@@ -23,8 +23,8 @@ Requires MATLAB 2013 or above.
 
 ## Model Description
 
-MicrOMZ_chemostat models microbial functional types competing for oxidants and reductants in a well-mixed chemostat with constant dilution rate ($D$) (d$^{-1}$). Each microbial type $i$
-- consumes one or more substrates (e.g., OM, NO$_3^-$, NO$_2^-$, NH$_4^+$, O$_2$, N$_2$O,
+MicrOMZ_chemostat models microbial functional types competing for oxidants and reductants in a well-mixed chemostat with constant dilution rate ($D$) ($\mathrm{d}^{-1}$). Each microbial type $i$
+- consumes one or more substrates (e.g., OM, $\mathrm{NO}_3^-$, $\mathrm{NO}_2^-$, $\mathrm{NH}_4^+$, $\mathrm{O}_2$, $\mathrm{N}_2\mathrm{O}$,
 - produces metabolic byproducts determined by its redox pathway,
 - experiences washout at rate ($D$),
 - grows according to Liebig’s law of the minimum.
@@ -37,19 +37,19 @@ Functional types interact through substrate competition and metabolic cross-feed
 
 #### 1. Biomass dynamics
 
-Microbial biomass $B_i$ (mmol m$^{-3}$) evolves as:
+Microbial biomass $B_i$ (mmol $\mathrm{m}^{-3}$) evolves as:
 
 $$
 \frac{d B_i}{dt} = (\mu_i - D)\, B_i,
 $$
 
-where $mu_i$ is the realized growth rate of type $i$. A population persists only when all required substrates exceed its subsistence threshold:
+where $\{mu}_i$ is the realized growth rate of type $i$. A population persists only when all required substrates exceed its subsistence threshold:
 
 $$
 R_j \ge R^*_{i,j}.
 $$
 
-Resource competition drives steady-state resource levels to the lowest \(R^*\) imposed by any competitor.
+Resource competition drives steady-state resource levels to the lowest $R^*$ imposed by any competitor.
 
 ---
 
