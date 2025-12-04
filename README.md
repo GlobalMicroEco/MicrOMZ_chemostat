@@ -84,65 +84,10 @@ All dissolved tracers obey the standard chemostat mass balance:
 - **Microbial production:** $\sum_i e_{i,x}$ $\mu_i$ $B_i$  
 - **Microbial consumption:** $\sum_i \frac{1}{y_{i,x}}$ $\mu_i B_i$
 
-Tracer-specific equations follow.
-
-##### Organic Matter (OM)
-
+The generic equation for tracer $X$ is
 $$
-\frac{\partial [\mathrm{OM}]}{\partial t} =
-D([\mathrm{OM}]_{\text{in}} - [\mathrm{OM}]) - \sum_i \frac{1}{y_{i,om}}\, \mu_i B_i
-$$
-
-##### Nitrate ($\mathrm{NO}_3^-$)
-
-$$
-\frac{\partial [\mathrm{NO_3^-}]}{\partial t}
-= D([\mathrm{NO_3^-}]_{\text{in}} - [\mathrm{NO_3^-}])
-+ \sum_i e_{i,no3}\, \mu_i B_i
-- \sum_i \frac{1}{y_{i,no3}}\, \mu_i B_i
-$$
-
-##### Nitrite ($\mathrm{NO}_2^-$) 
-
-$$
-\frac{\partial [\mathrm{NO_2^-}]}{\partial t}
-= D([\mathrm{NO_2^-}]_{\text{in}} - [\mathrm{NO_2^-}])
-+ \sum_i e_{i,no2}\, \mu_i B_i
-- \sum_i \frac{1}{y_{i,no2}}\, \mu_i B_i
-$$
-
-##### Ammonium ($\mathrm{NH}_4^+$) 
-
-$$
-\frac{\partial [\mathrm{NH_4^+}]}{\partial t}
-= D([\mathrm{NH_4^+}]_{\text{in}} - [\mathrm{NH_4^+}])
-+ \sum_i e_{i,nh4}\, \mu_i B_i
-- \sum_i \frac{1}{y_{i,nh4}}\, \mu_i B_i
-$$
-
-##### Dinitrogen ($\mathrm{N}_2$) 
-
-$$
-\frac{\partial [\mathrm{N_2}]}{\partial t}
-= D([\mathrm{N_2}]_{\text{in}} - [\mathrm{N_2}])
-+ \sum_i e_{i,n2}\, \mu_i B_i
-$$
-
-##### Oxygen ($\mathrm{O}_2$)
-
-$$
-\frac{\partial [\mathrm{O_2}]}{\partial t}
-= D([\mathrm{O_2}]_{\text{in}} - [\mathrm{O_2}])
-- \sum_i \frac{1}{y_{i,o2}}\, \mu_i B_i
-$$
-
-##### Nitrous Oxide ($\mathrm{N}_2\mathrm{O}$) 
-
-$$
-\frac{\partial [\mathrm{N_2O}]}{\partial t}
-= D([\mathrm{N_2O}]_{\text{in}} - [\mathrm{N_2O}])
-+ \sum_i e_{i,n2o}\, \mu_i B_i
-- \sum_i \frac{1}{y_{i,n2o}}\, \mu_i B_i
+\frac{\partial [\mathrm{X}]}{\partial t} =
+D([\mathrm{X}]_{\text{in}} - [\mathrm{X}]) - \sum_i \frac{1}{y_{i,\mathrm{X}}} \mu_i B_i
 $$
 
 ## Getting started
