@@ -102,8 +102,8 @@ $$
     model = run_model
 
 ## Code structure 
-    options.m             -- Script to toggle main model settings
-    run_model.m           -- Call this to run the model ('>> run_model')
+    options.m   == Script to toggle main model settings
+    run_model.m == Call this to run the model ('>> run_model')
                    
 #### functions/
     Folder where functions are stored, mostly for plotting 
