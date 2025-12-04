@@ -33,9 +33,17 @@ Functional types interact through substrate competition and metabolic cross-feed
 
 The model contains 10 functional types that fit under two broad metabolic categories.
 Chemoautotrophs derive energy from the oxidation of inorganic substrates and include
-- **aoa** =  aerobic ammonium oxidizers ($\mathrm{NH}_4^+ + \mathrm{O}_2 \rightarrow \mathrm{NO}_2^-$)
-- **nob** =  aerobic nitrite oxidizers ($\mathrm{NO}_2^- + \mathrm{O}_2 \rightarrow \mathrm{NO}_3^-$)
-- **aox** =  anaerobic ammonium oxidizers ($\mathrm{NH}_4^+ + \mathrm{NO}_2^- \rightarrow \mathrm{N}_2$)
+- **aoa** = aerobic ammonium oxidizers ($\mathrm{NH}_4^+ + \mathrm{O}_2 \rightarrow \mathrm{NO}_2^-$)
+- **nob** = aerobic nitrite oxidizers ($\mathrm{NO}_2^- + \mathrm{O}_2 \rightarrow \mathrm{NO}_3^-$)
+- **aox** = anaerobic ammonium oxidizers ($\mathrm{NH}_4^+ + \mathrm{NO}_2^- \rightarrow \mathrm{N}_2$)
+Heterotrophs respire organic matter using either O$_2$ or oxidized N species as electron acceptors and consist of
+- **aer** = obligately aerobic heterotrophs 
+- **nar** = $\mathrm{NO}_3^-$ to $\mathrm{NO}_2^-$ reducing heterotrophs 
+- **nai** = $\mathrm{NO}_3^-$ to $\mathrm{N}_2\mathrm{O}$ reducing heterotrophs 
+- **nao** = $\mathrm{NO}_3^-$ to $\mathrm{N}_2$ reducing heterotrophs 
+- **nir** = $\mathrm{NO}_2^-$ to $\mathrm{N}_2\mathrm{O}$ reducing heterotrophs 
+- **nio** = $\mathrm{NO}_2^-$ to $\mathrm{N}_2$ reducing heterotrophs 
+- **nos** = $\mathrm{N}_2\mathrm{O}$ to $\mathrm{N}_2$ reducing heterotrophs 
 
 ---
 
