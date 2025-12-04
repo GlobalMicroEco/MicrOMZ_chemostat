@@ -10,6 +10,7 @@ Contact Daniel McCoy (dmccoy@carnegiescience.edu) for assistance.
 ## Table of Contents
 
 - [Updates](#updates)
+- [Model Description](#description)
 - [Getting started](#getting-started)
 - [Code structure](#code-structure)
 - [Support](#support)
@@ -19,6 +20,133 @@ Requires MATLAB 2013 or above.
 
 ## Updates
 * 12/04/2025 -- First commit of MicrOMZ_chemostat 
+
+## Model Description
+
+MicrOMZ_chemostat models microbial functional types competing for oxidants and reductants in a well-mixed chemostat with constant dilution rate \(D\) (d\(^{-1}\)). Each microbial type \(i\)
+
+- consumes one or more substrates (e.g., OM, NO\(_3^-\), NO\(_2^-\), NH\(_4^+\), O\(_2\), N\(_2\)O),
+- produces metabolic byproducts determined by its redox pathway,
+- experiences washout at rate \(D\),
+- grows according to Liebig’s law of the minimum.
+
+Functional types interact through substrate competition and metabolic cross-feeding. At ecological steady state, resource concentrations are set by the lowest subsistence threshold \(R^*\) among competing populations (Tilman resource competition theory). All chemical tracers evolve through chemostat dilution, microbial uptake, and microbial byproduct formation.
+
+---
+
+### Model Equations
+
+#### 1. Biomass dynamics
+
+Microbial biomass \(B_i\) (mmol m\(^{-3}\)) evolves as:
+
+$$
+\frac{d B_i}{dt} = (\mu_i - D)\, B_i,
+$$
+
+where \(\mu_i\) is the realized growth rate of type \(i\). A population persists only when all required substrates exceed its subsistence threshold:
+
+$$
+R_j \ge R^*_{i,j}.
+$$
+
+Resource competition drives steady-state resource levels to the lowest \(R^*\) imposed by any competitor.
+
+---
+
+#### 2. Growth limitation and Monod uptake
+
+For substrates governed by saturation kinetics (NO\(_3^-\), NO\(_2^-\), NH\(_4^+\)), microbial growth on resource \(j\) follows:
+
+$$
+\mu_{ij}
+= y_{ij}\, V^{\max}_{ij}\, \frac{R_j}{R_j + K_{ij}},
+$$
+
+where:
+
+- \(K_{ij}\) — half-saturation coefficient,  
+- \(V^{\max}_{ij}\) — maximum uptake rate (mol resource per mol biomass per day),  
+- \(y_{ij}\) — biomass yield (mol biomass per mol resource),  
+- \(R_j\) — environmental concentration of resource \(j\).
+
+This results in a classical subsistence concentration:
+
+$$
+R^*_{i,j} = \frac{K_{ij} D}{y_{ij} V^{\max}_{ij} - D}.
+$$
+
+---
+
+#### 3. Tracer dynamics
+
+All dissolved tracers obey the standard chemostat mass balance:
+
+- **Dilution:** \(D([X]_{\text{in}} - [X])\)  
+- **Microbial production:** \(\sum_i e_{i,x}\, \mu_i B_i\)  
+- **Microbial consumption:** \(\sum_i \frac{1}{y_{i,x}}\, \mu_i B_i\)
+
+Tracer-specific equations follow.
+
+##### Organic Matter (OM)
+
+$$
+\frac{\partial [\mathrm{OM}]}{\partial t}
+= D([\mathrm{OM}]_{\text{in}} - [\mathrm{OM}]) 
+- \sum_i \frac{1}{y_{i,om}}\, \mu_i B_i
+$$
+
+##### Nitrate (NO\(_3^-\))
+
+$$
+\frac{\partial [\mathrm{NO_3^-}]}{\partial t}
+= D([\mathrm{NO_3^-}]_{\text{in}} - [\mathrm{NO_3^-}])
++ \sum_i e_{i,no3}\, \mu_i B_i
+- \sum_i \frac{1}{y_{i,no3}}\, \mu_i B_i
+$$
+
+##### Nitrite (NO\(_2^-\))
+
+$$
+\frac{\partial [\mathrm{NO_2^-}]}{\partial t}
+= D([\mathrm{NO_2^-}]_{\text{in}} - [\mathrm{NO_2^-}])
++ \sum_i e_{i,no2}\, \mu_i B_i
+- \sum_i \frac{1}{y_{i,no2}}\, \mu_i B_i
+$$
+
+##### Ammonium (NH\(_4^+\))
+
+$$
+\frac{\partial [\mathrm{NH_4^+}]}{\partial t}
+= D([\mathrm{NH_4^+}]_{\text{in}} - [\mathrm{NH_4^+}])
++ \sum_i e_{i,nh4}\, \mu_i B_i
+- \sum_i \frac{1}{y_{i,nh4}}\, \mu_i B_i
+$$
+
+##### Dinitrogen (N\(_2\))
+
+$$
+\frac{\partial [\mathrm{N_2}]}{\partial t}
+= D([\mathrm{N_2}]_{\text{in}} - [\mathrm{N_2}])
++ \sum_i e_{i,n2}\, \mu_i B_i
+$$
+
+##### Oxygen (O\(_2\))
+
+$$
+\frac{\partial [\mathrm{O_2}]}{\partial t}
+= D([\mathrm{O_2}]_{\text{in}} - [\mathrm{O_2}])
+- \sum_i \frac{1}{y_{i,o2}}\, \mu_i B_i
+$$
+
+##### Nitrous Oxide (N\(_2\)O)
+
+$$
+\frac{\partial [\mathrm{N_2O}]}{\partial t}
+= D([\mathrm{N_2O}]_{\text{in}} - [\mathrm{N_2O}])
++ \sum_i e_{i,n2o}\, \mu_i B_i
+- \sum_i \frac{1}{y_{i,n2o}}\, \mu_i B_i
+$$
 
 ## Getting started
 #### Set run options via 'options.m'
