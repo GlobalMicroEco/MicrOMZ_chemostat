@@ -81,8 +81,8 @@ $$
 All dissolved tracers obey the standard chemostat mass balance:
 
 - **Dilution:** $D([X]_{\text{in}} - [X])$ 
-- **Microbial production:** $\sum_i e_{i,x}$, $\mu_i$ $B_i$  
-- **Microbial consumption:** $\sum_i \frac{1}{y_{i,x}}$, $\mu_i B_i$
+- **Microbial production:** $\sum_i e_{i,x}$ $\mu_i$ $B_i$  
+- **Microbial consumption:** $\sum_i \frac{1}{y_{i,x}}$ $\mu_i B_i$
 
 Tracer-specific equations follow.
 
@@ -94,7 +94,7 @@ $$
 - \sum_i \frac{1}{y_{i,om}}\, \mu_i B_i
 $$
 
-##### Nitrate (NO\(_3^-\))
+##### Nitrate ($\mathrm{NO}_3^-$)
 
 $$
 \frac{\partial [\mathrm{NO_3^-}]}{\partial t}
@@ -103,7 +103,7 @@ $$
 - \sum_i \frac{1}{y_{i,no3}}\, \mu_i B_i
 $$
 
-##### Nitrite (NO\(_2^-\))
+##### Nitrite ($\mathrm{NO}_2^-$) 
 
 $$
 \frac{\partial [\mathrm{NO_2^-}]}{\partial t}
@@ -112,7 +112,7 @@ $$
 - \sum_i \frac{1}{y_{i,no2}}\, \mu_i B_i
 $$
 
-##### Ammonium (NH\(_4^+\))
+##### Ammonium ($\mathrm{NH}_4^+$) 
 
 $$
 \frac{\partial [\mathrm{NH_4^+}]}{\partial t}
@@ -121,7 +121,7 @@ $$
 - \sum_i \frac{1}{y_{i,nh4}}\, \mu_i B_i
 $$
 
-##### Dinitrogen (N\(_2\))
+##### Dinitrogen ($\mathrm{N}_2$) 
 
 $$
 \frac{\partial [\mathrm{N_2}]}{\partial t}
@@ -129,7 +129,7 @@ $$
 + \sum_i e_{i,n2}\, \mu_i B_i
 $$
 
-##### Oxygen (O\(_2\))
+##### Oxygen ($\mathrm{O}_2$)
 
 $$
 \frac{\partial [\mathrm{O_2}]}{\partial t}
@@ -137,7 +137,7 @@ $$
 - \sum_i \frac{1}{y_{i,o2}}\, \mu_i B_i
 $$
 
-##### Nitrous Oxide (N\(_2\)O)
+##### Nitrous Oxide ($\mathrm{N}_2\mathrm{O}$) 
 
 $$
 \frac{\partial [\mathrm{N_2O}]}{\partial t}
