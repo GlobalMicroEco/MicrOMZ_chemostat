@@ -85,9 +85,10 @@ All dissolved tracers obey the standard chemostat mass balance:
 - **Microbial consumption:** $\sum_i \frac{1}{y_{i,x}}$ $\mu_i B_i$
 
 The generic equation for tracer $X$ is
+
 $$
-\frac{\partial [\mathrm{X}]}{\partial t} =
-D([\mathrm{X}]_{\text{in}} - [\mathrm{X}]) - \sum_i \frac{1}{y_{i,\mathrm{X}}} \mu_i B_i
+\frac{\partial \mathrm{X}}{\partial t} =
+D(\mathrm{X}_{\text{in}} - \mathrm{X}) - \sum_i \frac{1}{y_{i,\mathrm{X}}} \mu_i B_i
 $$
 
 ## Getting started
