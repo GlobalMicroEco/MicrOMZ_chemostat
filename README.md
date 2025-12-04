@@ -23,7 +23,7 @@ Requires MATLAB 2013 or above.
 
 ## Model Description
 
-MicrOMZ_chemostat models microbial functional types competing for oxidants and reductants in a well-mixed chemostat with constant dilution rate ($D$) ($\mathrm{d}^{-1}$). Each microbial type $i$
+MicrOMZ_chemostat models microbial functional types competing for oxidants and reductants in a well-mixed chemostat with constant dilution rate ($D$, $\mathrm{d}^{-1}$). Each microbial type $i$
 - consumes one or more substrates (e.g., OM, $\mathrm{NO}_3^-$, $\mathrm{NO}_2^-$, $\mathrm{NH}_4^+$, $\mathrm{O}_2$, $\mathrm{N}_2\mathrm{O}$,
 - produces metabolic byproducts determined by its redox pathway,
 - experiences washout at rate ($D$),
@@ -40,7 +40,7 @@ Functional types interact through substrate competition and metabolic cross-feed
 Microbial biomass $B_i$ (mmol $\mathrm{m}^{-3}$) evolves as:
 
 $$
-\frac{d B_i}{dt} = (\mu_i - D)\, B_i,
+\frac{d B_i}{dt} = (\mu_i - D)B_i,
 $$
 
 where $\{mu}_i$ is the realized growth rate of type $i$. A population persists only when all required substrates exceed its subsistence threshold:
@@ -58,7 +58,7 @@ Microbial growth on resource $j$ follows:
 
 $$
 \mu_{ij}
-= y_{ij}\, V^{\max}_{ij}\, \frac{R_j}{R_j + K_{ij}},
+= y_{ij} V^{\max}_{ij} \frac{R_j}{R_j + K_{ij}},
 $$
 
 where:
@@ -66,7 +66,7 @@ where:
 - $K_{ij}$ — half-saturation coefficient,  
 - $V^{\max}_{ij}$ — maximum uptake rate (mol resource per mol biomass per day),  
 - $y_{ij}$ — biomass yield (mol biomass per mol resource),  
-- $R_j$ — environmental concentration of resource \(j\).
+- $R_j$ — environmental concentration of resource $j$.
 
 This results in a classical subsistence concentration:
 
@@ -81,8 +81,8 @@ $$
 All dissolved tracers obey the standard chemostat mass balance:
 
 - **Dilution:** $D([X]_{\text{in}} - [X])$ 
-- **Microbial production:** $\sum_i e_{i,x}$, $mu_i$ $B_i$  
-- **Microbial consumption:** $\sum_i \frac{1}{y_{i,x}}$, $mu_i B_i$
+- **Microbial production:** $\sum_i e_{i,x}$, $\mu_i$ $B_i$  
+- **Microbial consumption:** $\sum_i \frac{1}{y_{i,x}}$, $\mu_i B_i$
 
 Tracer-specific equations follow.
 
