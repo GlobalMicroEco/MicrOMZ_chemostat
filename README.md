@@ -33,7 +33,7 @@ Functional types interact through substrate competition and metabolic cross-feed
 
 The model contains 10 functional types that fit under two broad metabolic categories.
 Chemoautotrophs derive energy from the oxidation of inorganic substrates and include
-- $aoa$ == aerobic ammonium oxidizers ($\mathrm{NH}_4^+ + \mathrm{O}_2 \rightarrow \mathrm{NO}_2^-$)
+- **aoa** aerobic ammonium oxidizers ($\mathrm{NH}_4^+ + \mathrm{O}_2 \rightarrow \mathrm{NO}_2^-$)
 
 ---
 
