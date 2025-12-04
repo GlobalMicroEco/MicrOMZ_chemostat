@@ -36,7 +36,8 @@ Chemoautotrophs derive energy from the oxidation of inorganic substrates and inc
 - **aoa** = aerobic ammonium oxidizers ($\mathrm{NH}_4^+ + \mathrm{O}_2 \rightarrow \mathrm{NO}_2^-$)
 - **nob** = aerobic nitrite oxidizers ($\mathrm{NO}_2^- + \mathrm{O}_2 \rightarrow \mathrm{NO}_3^-$)
 - **aox** = anaerobic ammonium oxidizers ($\mathrm{NH}_4^+ + \mathrm{NO}_2^- \rightarrow \mathrm{N}_2$)
-Heterotrophs respire organic matter using either O$_2$ or oxidized N species as electron acceptors and consist of
+
+Heterotrophs respire organic matter using either $\mathrm{O}_2$ or oxidized N species as electron acceptors and consist of
 - **aer** = obligately aerobic heterotrophs 
 - **nar** = $\mathrm{NO}_3^-$ to $\mathrm{NO}_2^-$ reducing heterotrophs 
 - **nai** = $\mathrm{NO}_3^-$ to $\mathrm{N}_2\mathrm{O}$ reducing heterotrophs 
