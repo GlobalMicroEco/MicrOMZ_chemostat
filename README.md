@@ -3,7 +3,7 @@ MicrOMZ is a trait-based functional type mode that simulates the growth, mortali
 
 By modeling the metabolisms of these bacterial populations, we are able to resolve the key nitrogen cycle reactions of nitrification, denitrification, and anammox using Tilman resource competition arguments, rather than parameterizing the reactions as a function of seawater chemistry only (e.g., 'NitrOMZ' from Bianchi et al., 2022).
 
-The model is embedded here in a 0-D chemostat with constant dilution rate (D). 
+The model is embedded here in a 0-D chemostat with constant dilution rate ($D$). 
 
 Contact Daniel McCoy (dmccoy@carnegiescience.edu) for assistance.
     
@@ -23,14 +23,13 @@ Requires MATLAB 2013 or above.
 
 ## Model Description
 
-MicrOMZ_chemostat models microbial functional types competing for oxidants and reductants in a well-mixed chemostat with constant dilution rate \(D\) (d\(^{-1}\)). Each microbial type \(i\)
-
-- consumes one or more substrates (e.g., OM, NO\(_3^-\), NO\(_2^-\), NH\(_4^+\), O\(_2\), N\(_2\)O),
+MicrOMZ_chemostat models microbial functional types competing for oxidants and reductants in a well-mixed chemostat with constant dilution rate ($D$) (d$^{-1}$). Each microbial type $i$
+- consumes one or more substrates (e.g., OM, NO$_3^-$, NO$_2^-$, NH$_4^+$, O$_2$, N$_2$O,
 - produces metabolic byproducts determined by its redox pathway,
-- experiences washout at rate \(D\),
+- experiences washout at rate ($D$),
 - grows according to Liebig’s law of the minimum.
 
-Functional types interact through substrate competition and metabolic cross-feeding. At ecological steady state, resource concentrations are set by the lowest subsistence threshold \(R^*\) among competing populations (Tilman resource competition theory). All chemical tracers evolve through chemostat dilution, microbial uptake, and microbial byproduct formation.
+Functional types interact through substrate competition and metabolic cross-feeding. At ecological steady state, resource concentrations are set by the lowest subsistence threshold $R^*$ among competing populations (Tilman resource competition theory). All chemical tracers evolve through chemostat dilution, microbial uptake, and microbial byproduct formation.
 
 ---
 
@@ -38,13 +37,13 @@ Functional types interact through substrate competition and metabolic cross-feed
 
 #### 1. Biomass dynamics
 
-Microbial biomass \(B_i\) (mmol m\(^{-3}\)) evolves as:
+Microbial biomass $B_i$ (mmol m$^{-3}$) evolves as:
 
 $$
 \frac{d B_i}{dt} = (\mu_i - D)\, B_i,
 $$
 
-where \(\mu_i\) is the realized growth rate of type \(i\). A population persists only when all required substrates exceed its subsistence threshold:
+where $mu_i$ is the realized growth rate of type $i$. A population persists only when all required substrates exceed its subsistence threshold:
 
 $$
 R_j \ge R^*_{i,j}.
@@ -55,8 +54,7 @@ Resource competition drives steady-state resource levels to the lowest \(R^*\) i
 ---
 
 #### 2. Growth limitation and Monod uptake
-
-For substrates governed by saturation kinetics (NO\(_3^-\), NO\(_2^-\), NH\(_4^+\)), microbial growth on resource \(j\) follows:
+Microbial growth on resource $j$ follows:
 
 $$
 \mu_{ij}
@@ -65,10 +63,10 @@ $$
 
 where:
 
-- \(K_{ij}\) — half-saturation coefficient,  
-- \(V^{\max}_{ij}\) — maximum uptake rate (mol resource per mol biomass per day),  
-- \(y_{ij}\) — biomass yield (mol biomass per mol resource),  
-- \(R_j\) — environmental concentration of resource \(j\).
+- $K_{ij}$ — half-saturation coefficient,  
+- $V^{\max}_{ij}$ — maximum uptake rate (mol resource per mol biomass per day),  
+- $y_{ij}$ — biomass yield (mol biomass per mol resource),  
+- $R_j$ — environmental concentration of resource \(j\).
 
 This results in a classical subsistence concentration:
 
@@ -82,9 +80,9 @@ $$
 
 All dissolved tracers obey the standard chemostat mass balance:
 
-- **Dilution:** \(D([X]_{\text{in}} - [X])\)  
-- **Microbial production:** \(\sum_i e_{i,x}\, \mu_i B_i\)  
-- **Microbial consumption:** \(\sum_i \frac{1}{y_{i,x}}\, \mu_i B_i\)
+- **Dilution:** $D([X]_{\text{in}} - [X])$ 
+- **Microbial production:** $\sum_i e_{i,x}$, $mu_i$ $B_i$  
+- **Microbial consumption:** $\sum_i \frac{1}{y_{i,x}}$, $mu_i B_i$
 
 Tracer-specific equations follow.
 
