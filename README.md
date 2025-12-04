@@ -89,9 +89,8 @@ Tracer-specific equations follow.
 ##### Organic Matter (OM)
 
 $$
-\frac{\partial [\mathrm{OM}]}{\partial t}
-= D([\mathrm{OM}]_{\text{in}} - [\mathrm{OM}]) 
-- \sum_i \frac{1}{y_{i,om}}\, \mu_i B_i
+\frac{\partial [\mathrm{OM}]}{\partial t} =
+D([\mathrm{OM}]_{\text{in}} - [\mathrm{OM}]) - \sum_i \frac{1}{y_{i,om}}\, \mu_i B_i
 $$
 
 ##### Nitrate ($\mathrm{NO}_3^-$)
