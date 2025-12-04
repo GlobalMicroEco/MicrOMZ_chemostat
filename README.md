@@ -31,6 +31,10 @@ MicrOMZ_chemostat models microbial functional types competing for oxidants and r
 
 Functional types interact through substrate competition and metabolic cross-feeding. At ecological steady state, resource concentrations are set by the lowest subsistence threshold $R^*$ among competing populations (Tilman resource competition theory). All chemical tracers evolve through chemostat dilution, microbial uptake, and microbial byproduct formation.
 
+The model contains 10 functional types that fit under two broad metabolic categories.
+Chemoautotrophs derive energy from the oxidation of inorganic substrates and include
+- $aoa$ == aerobic ammonium oxidizers ($\mathrm{NH}_4^+ + \mathrm{O}_2 \rightarrow \mathrm{NO}_2^-$)
+
 ---
 
 ### Model Equations
